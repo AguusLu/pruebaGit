@@ -6,6 +6,4 @@ namespace pruebaGit.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
-
-    //comentario 1
 }
