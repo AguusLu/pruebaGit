@@ -1,1 +1,1 @@
-Repositorio para aprender Git - 
+Repositorio para aprender Git
