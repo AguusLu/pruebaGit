@@ -1,0 +1,25 @@
+﻿@model List<pruebaGit.Models.Libro>
+<h2>Catálogo de Libros</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Año</th>
+            <th>Autor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Detalle", "Libro", new { id = libro.id })">
+                        @libro.titulo
+                    </a>
+                </td>
+                <td>@libro.anioPublicacion</td>
+                <td>@libro.autor.nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+﻿@model pruebaGit.Models.Libro
+
+<h2>Detalle del Libro</h2>
+
+<div class="card p-3">
+    <h4>@Model.titulo</h4>
+    <p><strong>Año de publicación:</strong> @Model.anioPublicacion</p>
+    <p><strong>Autor:</strong> @Model.autor.nombre</p>
+</div>
+
+<a href="@Url.Action("Index", "Libro")" class="btn btn-secondary mt-3">Volver al catálogo</a>
