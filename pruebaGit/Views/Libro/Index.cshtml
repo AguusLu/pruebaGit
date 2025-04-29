@@ -1,8 +1,15 @@
 ﻿@model List<pruebaGit.Models.Libro>
+@section Styles {
+    <link rel="stylesheet" href="~/css/estilos.css" />
+}
+
+<body style="background-color:@ViewBag.ColorFondo">
+
 <h2>Catálogo de Libros</h2>
 <table class="table">
     <thead>
         <tr>
+            <th>Portada</th>
             <th>Título</th>
             <th>Año</th>
             <th>Autor</th>
@@ -13,13 +20,24 @@
         {
             <tr>
                 <td>
-                    <a href="@Url.Action("Detalle", "Libro", new { id = libro.id })">
-                        @libro.titulo
-                    </a>
+                    <img src="@libro.UrlImagen" alt="Portada de @libro.titulo" width="80" />
                 </td>
+                <td>@libro.titulo</td>
                 <td>@libro.anioPublicacion</td>
                 <td>@libro.autor.nombre</td>
             </tr>
         }
     </tbody>
+
 </table>
+
+    <a href="@Url.Action("Index", new { color = "lightyellow" })">
+        <button>Fondo Amarillo Claro</button>
+    </a>
+    <a href="@Url.Action("Index", new { color = "lightblue" })">
+        <button>Fondo Azul Claro</button>
+    </a>
+    <a href="@Url.Action("Index")">
+        <button>Fondo Blanco</button>
+    </a>
+</body>
