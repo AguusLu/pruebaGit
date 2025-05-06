@@ -1,0 +1,33 @@
+﻿@model List<pruebaGit.Models.Libro>
+
+<h2>Catálogo de Libros</h2>
+
+<div class="mb-3">
+    <a href="@Url.Action("Index", new { color = "light" })" class="btn btn-light">Claro</a>
+    <a href="@Url.Action("Index", new { color = "primary" })" class="btn btn-primary">Azul</a>
+    <a href="@Url.Action("Index", new { color = "warning" })" class="btn btn-warning">Amarillo</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Título</th>
+            <th>Año</th>
+            <th>Autor</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model)
+        {
+            <tr class="table-@ViewBag.Color">
+                <td>@libro.titulo</td>
+                <td>@libro.anioPublicacion</td>
+                <td>@libro.autor?.nombre</td>
+                <td>
+                    <a href="@Url.Action("Detalle", "Libro", new { id = libro.id })" class="btn btn-outline-info btn-sm">Detalle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

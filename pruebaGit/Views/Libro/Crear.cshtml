@@ -1,0 +1,28 @@
+﻿@model pruebaGit.Models.Libro
+
+<h2>Crear Libro</h2>
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-success">@ViewBag.Mensaje</div>
+}
+<form asp-action="Crear" method="post">
+    <div class="form-group">
+        <label asp-for="autorId">Autor</label>
+        <select asp-for="autorId" asp-items="@(new SelectList(ViewBag.Autores, "id", "nombre"))" class="form-control"></select>
+        <span asp-validation-for="autorId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="titulo">Título</label>
+        <input asp-for="titulo" class="form-control" />
+        <span asp-validation-for="titulo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="anioPublicacion">Año de Publicación</label>
+        <input asp-for="anioPublicacion" class="form-control" />
+        <span asp-validation-for="anioPublicacion" class="text-danger"></span>
+    </div>
+
+    <input type="submit" value="Crear" class="btn btn-primary" />
+</form>
