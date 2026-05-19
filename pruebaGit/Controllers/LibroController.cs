@@ -16,7 +16,7 @@ namespace pruebaGit.Controllers
         //private static List<Libro> libros = new List<Libro>();
 
         // Lista persistente de libros
-        private readonly List<Libro> libros =
+        private static List<Libro> libros =
     [
         new Libro
         {
