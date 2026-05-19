@@ -1,5 +1,12 @@
 ﻿@model pruebaGit.Models.Libro
 
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensaje"]
+    </div>
+}
+
 <h2>Detalle del Libro</h2>
 
 <div class="card p-3">
@@ -7,5 +14,8 @@
     <p><strong>Año de publicación:</strong> @Model.anioPublicacion</p>
     <p><strong>Autor:</strong> @Model.autor.nombre</p>
 </div>
+<a asp-action="Editar" asp-route-id="@Model.id" class="btn btn-warning">
+    <i class="bi bi-pencil"></i> Editar
+</a>
 
 <a href="@Url.Action("Index", "Libro")" class="btn btn-secondary mt-3">Volver al catálogo</a>

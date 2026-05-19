@@ -7,10 +7,12 @@
     <a href="@Url.Action("Index", new { color = "primary" })" class="btn btn-primary">Azul</a>
     <a href="@Url.Action("Index", new { color = "warning" })" class="btn btn-warning">Amarillo</a>
 </div>
+<a href="@Url.Action("Crear", "Libro")" class="btn btn-outline-info btn-sm">Crear</a>
 
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
         <tr>
+            <th>Portada</th>
             <th>Título</th>
             <th>Año</th>
             <th>Autor</th>
@@ -21,6 +23,9 @@
         @foreach (var libro in Model)
         {
             <tr class="table-@ViewBag.Color">
+                <td>
+                    <img src="@libro.urlImagen" alt="Portada de @libro.titulo" width="80" />
+                </td>
                 <td>@libro.titulo</td>
                 <td>@libro.anioPublicacion</td>
                 <td>@libro.autor?.nombre</td>
